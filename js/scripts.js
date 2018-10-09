@@ -38,7 +38,22 @@ let makeGrid = function(string, size) {
   i += size[0]*size[1]
   return grid;
 }
+//Function to read down the columns of the grid from left to right.
+let reform = function(twoDimensionalArray) {
+  let rows = twoDimensionalArray.length;
+  let columns = twoDimensionalArray[0].length;
 
+  let reformed = [];
+
+  for(let row = 0; row < columns; row++) {
+    for(let column = 0; column < rows; column ++) {
+      if(twoDimensionalArray[column][row]) {
+        reformed.push(twoDimensionalArray[column][row]);
+      }
+    }
+  }
+  return reformed;
+}
 
 
 
@@ -52,7 +67,8 @@ $(document).ready(function() {
       let cleanString = cleanUp(userString);
       let size = squareSize(cleanString.length);
       let grid = makeGrid(cleanString, size);
-      console.log(grid);
+      let reformed = reform(grid);
+      console.log(reformed);
     }
   });
 });
