@@ -86,13 +86,11 @@ $(document).ready(function() {
   $('#user_form').submit(function(event) {
     event.preventDefault();
     let userString = $('#user_message').val();
-    if(userString) {
-      let cleanString = cleanUp(userString);
-      let size = squareSize(cleanString.length);
-      let grid = makeGrid(cleanString, size);
-      let reformed = reform(grid);
-      let encrypted = encrypt(reformed);
-      $('.encrypted_message_here').text(encrypted);
-    }
+    let cleanString = cleanUp(userString);
+    let size = squareSize(cleanString.length);
+    let grid = makeGrid(cleanString, size);
+    let reformed = reform(grid);
+    let encrypted = encrypt(reformed);
+    $('.encrypted_message_here').text(encrypted);
   });
 });
