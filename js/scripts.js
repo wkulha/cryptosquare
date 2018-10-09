@@ -1,7 +1,8 @@
 //Business logic
 //Function to remove punctuation and spaces from a string.
 let cleanUp = function(string) {
-  return string.replace(/[^\w\\s]|_/g, "")
+  let noSpaceNoPunctuation = string.replace(/[^\w\\s]|_/g, "")
+  return noSpaceNoPunctuation.toLowerCase();
 }
 
 
