@@ -92,7 +92,7 @@ $(document).ready(function() {
       let grid = makeGrid(cleanString, size);
       let reformed = reform(grid);
       let encrypted = encrypt(reformed);
-      console.log(encrypted);
+      $('.encrypted_message_here').text(encrypted);
     }
   });
 });
